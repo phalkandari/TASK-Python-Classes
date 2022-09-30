@@ -1,20 +1,29 @@
 class Wallet:
-    def __init__(self,money):
+    """A simple wallet to keep track of money."""
+    def __init__(self, money):
         self.money = money
 
     def credit(self, amount):
-        total_addition = amount + self.money
-        print (f"The new amount of money is {total_addition}")
+        """
+        Adds the amount to the money attribute,
+        then prints the new value
+        """
+        self.money = self.money + amount
+        print (f"The new amount of money is {self.money}")
 
     def debit(self, amount):
-        self.amount = amount
-        total_subtraction = self.money - self.amount
-        print (f"The new amount of money is {total_subtraction}")
+        """
+        Subtracts the amount from the money attribute,
+        then prints the new value
+        """
+        self.money = self.money - amount
+        print (f"The new amount of money is {self.money}")
 
 
 wallet = Wallet(6)
 wallet = Wallet(0)  # This should default money inside the wallet to 0
-print(wallet)
+print(wallet.credit(5))
+print(wallet.debit(3))
 
 
 # class Person:
