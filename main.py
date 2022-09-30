@@ -57,7 +57,7 @@ class Vendor(Person):
         Transfers money from the customer's wallet to the vendor's wallet,
         Prints a nice message saying how many icecreams were sold        
         """
-        
+
 
 
 
@@ -65,9 +65,16 @@ class Vendor(Person):
 vendor = Vendor("Abdallah", 3, 6)
 
 
-# class Customer:
-#     # implement Customer!
-#     pass
+class Customer (Person):
+    """A simple customer class."""
+    def __init__(self, name, location, wallet):
+        super().__init__(name, location, wallet)
+
+    # def is_in_range (vendor):
+
+    # def have_enough_money (vendor, number_of_icecreams):
+
+    # def request_icecream (vendor, number_of_icecreams):
 
 
-# customer = Customer("Abdallah", 3, 6)
+customer = Customer("Abdallah", 3, 6)
