@@ -25,26 +25,44 @@ wallet = Wallet(0)  # This should default money inside the wallet to 0
 print(wallet.credit(5))
 print(wallet.debit(3))
 
-
-# class Person:
-#     name = "X"
-#     location = "Y"
-#     wallet = "Z"
-
-#     def moveTo(self, point):
-#         self.location = point
-#         print (f"Your new location is {self.location}")
+wallet_instance = Wallet(0)
 
 
-# person = Person("Moh", 5, 50)
+class Person:
+    """A simple person class"""
+    def __init__(self, name, location, wallet):
+        self.name = name
+        self.location = location
+        self.wallet = wallet_instance.credit(wallet)
+
+    def moveTo(self, point):
+        self.location = point
+        print (f"Your new location is {self.location}")
 
 
-# class Vendor:
-#     # implement Vendor!
-#     pass
+person = Person("Moh", 5, 50)
 
 
-# vendor = Vendor("Abdallah", 3, 6)
+class Vendor(Person):
+    """A subclass of Person with the job Vendor"""
+    def _init__(self, name, location, wallet):
+        super().__init(name, location, wallet)
+        self.range = 5
+        self.price = 1
+    
+    def sellTo(customer, number_of_icecreams):
+        """
+        sells a specific number of ice creams to the customer:
+        Moves to the customer's location,
+        Transfers money from the customer's wallet to the vendor's wallet,
+        Prints a nice message saying how many icecreams were sold        
+        """
+        
+
+
+
+
+vendor = Vendor("Abdallah", 3, 6)
 
 
 # class Customer:
