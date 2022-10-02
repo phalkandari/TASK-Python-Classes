@@ -1,8 +1,11 @@
 class Wallet:
     """A simple wallet to keep track of money."""
-    def __init__(self, money):
+    def __init__(self, money=0): #default the value for money to 0
         self.money = money
 
+    def __str__(self): #This method returns the string representation of the object
+        return f"This wallet has {self.money}"
+    
     def credit(self, amount):
         """
         Adds the amount to the money attribute,
@@ -22,8 +25,6 @@ class Wallet:
 
 wallet = Wallet(6)
 wallet = Wallet(0)  # This should default money inside the wallet to 0
-print(wallet.credit(5))
-print(wallet.debit(3))
 
 wallet_instance = Wallet(0)
 
