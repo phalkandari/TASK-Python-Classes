@@ -12,7 +12,7 @@ class Wallet:
         then prints the new value
         """
         self.money = self.money + amount
-        print (f"The new amount of money is {self.money}")
+        print (f"Credit: The new amount of money is {self.money}")
 
     def debit(self, amount):
         """
@@ -20,7 +20,7 @@ class Wallet:
         then prints the new value
         """
         self.money = self.money - amount
-        print (f"The new amount of money is {self.money}")
+        print (f"Debit: The new amount of money is {self.money}")
 
 
 wallet = Wallet(6)
@@ -31,14 +31,14 @@ wallet_instance = Wallet(0)
 
 class Person:
     """A simple person class"""
-    def __init__(self, name, location, wallet):
+    def __init__(self, name, location, money):
         self.name = name
         self.location = location
-        self.wallet = wallet_instance.credit(wallet)
+        self.wallet = Wallet(money)
 
     def moveTo(self, point):
         self.location = point
-        print (f"Your new location is {self.location}")
+        print (f"The new location of {self.name} is {self.location}")
 
 
 person = Person("Moh", 5, 50)
