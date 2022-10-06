@@ -1,6 +1,3 @@
-from turtle import distance
-
-
 class Wallet:
     """A simple wallet to keep track of money."""
 
@@ -79,8 +76,8 @@ class Customer(Person):
         super().__init__(name, location, money)
 
     def is_in_range(self, vendor):
-        distance = vendor.location - self.location
-        if distance > vendor.range:
+        distance = abs(vendor.location - self.location)
+        if distance < vendor.range:
             return True
         else:
             return False
